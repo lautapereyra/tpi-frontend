@@ -9,6 +9,23 @@
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     box-sizing: border-box;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-button {
+    flex-shrink: 0;
+    border: 1px solid #dce1e9;
+    border-radius: 8px;
+    padding: 9px 13px;
+    background: #ffffff;
+    color: #202938;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-button:hover {
+    background: #f1f5f9;
 }
 
 .navbar-brand {
@@ -115,6 +132,10 @@
         width: 100%;
         justify-content: flex-start;
         overflow-x: auto;
+    }
+
+    .theme-button {
+        margin-left: auto;
     }
 
     .navbar-link {

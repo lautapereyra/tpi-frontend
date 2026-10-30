@@ -27,6 +27,175 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  border-inline: 0;
+  text-align: left;
+}
+
+.app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app.light-mode {
+  color-scheme: light;
+  color: #202938;
+  background: #f8fafc;
+}
+
+.app.dark-mode {
+  color-scheme: dark;
+  color: #f1f5f9;
+  background: #111827;
+}
+
+.app.dark-mode h1,
+.app.dark-mode h2,
+.app.dark-mode h3 {
+  color: #f1f5f9;
+}
+
+.app.dark-mode .navbar,
+.app.dark-mode .footer {
+  color: #f1f5f9;
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.app.dark-mode .navbar-brand,
+.app.dark-mode .navbar-user-name,
+.app.dark-mode .footer-brand {
+  color: #f1f5f9;
+}
+
+.app.dark-mode .navbar-link,
+.app.dark-mode .footer-status {
+  color: #cbd5e1;
+}
+
+.app.dark-mode .navbar-link:hover,
+.app.dark-mode .navbar-link.active {
+  color: #bfdbfe;
+  background: #374151;
+}
+
+.app.dark-mode .theme-button {
+  color: #f1f5f9;
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.app.dark-mode .theme-button:hover {
+  background: #4b5563;
+}
+
+.app.dark-mode .productos-page,
+.app.dark-mode .sales-page {
+  color: #e5e7eb;
+  background: #111827;
+}
+
+.app.dark-mode .productos-header h1,
+.app.dark-mode .productos-stat strong,
+.app.dark-mode .customers-summary-card strong,
+.app.dark-mode .customer-info-card strong,
+.app.dark-mode .customer-purchase-summary strong {
+  color: #f1f5f9;
+}
+
+.app.dark-mode .productos-header p,
+.app.dark-mode .productos-stat span,
+.app.dark-mode .customers-header p,
+.app.dark-mode .customers-summary-card span,
+.app.dark-mode .customer-info-card span,
+.app.dark-mode .customer-purchase-summary span {
+  color: #9ca3af;
+}
+
+.app.dark-mode .productos-stat,
+.app.dark-mode .productos-panel,
+.app.dark-mode .productos-modal,
+.app.dark-mode .customers-summary-card,
+.app.dark-mode .customers-form-section,
+.app.dark-mode .customers-list-section,
+.app.dark-mode .customer-detail,
+.app.dark-mode .customer-info-card,
+.app.dark-mode .customer-purchase-summary article,
+.app.dark-mode .sales-summary-card,
+.app.dark-mode .sales-table-section,
+.app.dark-mode .sale-form {
+  color: #e5e7eb;
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.app.dark-mode .productos-toolbar,
+.app.dark-mode .productos-table th,
+.app.dark-mode .customers-table th,
+.app.dark-mode .sales-table th {
+  color: #cbd5e1;
+  background: #273449;
+  border-color: #374151;
+}
+
+.app.dark-mode .productos-toolbar {
+  border-bottom-color: #374151;
+}
+
+.app.dark-mode .productos-table td,
+.app.dark-mode .customers-table td,
+.app.dark-mode .customers-table td strong,
+.app.dark-mode .sales-table td {
+  color: #e5e7eb;
+  border-color: #374151;
+}
+
+.app.dark-mode .productos-toolbar input,
+.app.dark-mode .productos-toolbar select,
+.app.dark-mode .productos-modal input,
+.app.dark-mode .customers-form input,
+.app.dark-mode .customers-filters input,
+.app.dark-mode .customers-filters select,
+.app.dark-mode .sales-filters input,
+.app.dark-mode .sales-filters select,
+.app.dark-mode .sale-field input,
+.app.dark-mode .sale-field select {
+  color: #f1f5f9;
+  background: #111827;
+  border-color: #4b5563;
+}
+
+.app.dark-mode .productos-btn-secondary,
+.app.dark-mode .productos-btn-edit,
+.app.dark-mode .productos-btn-delete,
+.app.dark-mode .customers-secondary-button,
+.app.dark-mode .customers-view-button,
+.app.dark-mode .sales-secondary-button {
+  background: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.app.dark-mode .productos-modal label,
+.app.dark-mode .customers-form label,
+.app.dark-mode .sale-field label,
+.app.dark-mode .sales-header p,
+.app.dark-mode .sales-table-header p,
+.app.dark-mode .sales-summary-card span,
+.app.dark-mode .sale-cart-item span {
+  color: #cbd5e1;
+}
+
+.app.dark-mode .sale-empty {
+  color: #cbd5e1;
+  background: #273449;
+}
+
+.app.dark-mode .sale-cart-item {
+  border-color: #374151;
 }
 
 /* Elementos generales */

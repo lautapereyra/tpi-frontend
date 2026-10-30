@@ -1,31 +1,43 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ darkMode, toggleTheme }) {
+    const navLinkClass = ({ isActive }) =>
+        isActive ? "navbar-link active" : "navbar-link";
+
     return (
         <nav className="navbar">
-            <a href="/" className="navbar-brand">
+            <NavLink to="/" className="navbar-brand">
                 <span className="navbar-logo">G</span>
                 <span className="navbar-title">Gestión Comercial</span>
-            </a>
+            </NavLink>
 
             <div className="navbar-links">
-                <a href="/" className="navbar-link active">
+                <NavLink to="/" end className={navLinkClass}>
                     Resumen
-                </a>
+                </NavLink>
 
-                <a href="/productos" className="navbar-link">
+                <NavLink to="/productos" className={navLinkClass}>
                     Productos
-                </a>
+                </NavLink>
 
-                <a href="/ventas" className="navbar-link">
+                <NavLink to="/ventas" className={navLinkClass}>
                     Ventas
-                </a>
+                </NavLink>
 
-                <a href="/clientes" className="navbar-link">
+                <NavLink to="/clientes" className={navLinkClass}>
                     Clientes
-                </a>
+                </NavLink>
             </div>
+            <button
+                className="theme-button"
+                type="button"
+                onClick={toggleTheme}
+                aria-pressed={darkMode}
+                aria-label={`Cambiar a modo ${darkMode ? "claro" : "oscuro"}`}
+            >
+                {darkMode ? "Modo claro" : "Modo oscuro"}
+            </button>
         </nav>
     );
 }

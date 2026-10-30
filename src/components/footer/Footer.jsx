@@ -15,10 +15,10 @@ function Footer() {
             <div className="footer-right">
                 <span className="footer-status">
                     <span className="footer-status-dot"></span>
-                    Sistema operativo
+                    Usuario
                 </span>
 
-                <span className="footer-version">Versión 1.0.0</span>
+                <span className="footer-version">beta</span>
             </div>
         </footer>
     );

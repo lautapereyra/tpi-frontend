@@ -1,111 +1,186 @@
-.dashboard {
-    padding: 32px;
-    width: 100%;
-    color: #1f2937;
-    background-color: #f8fafc;
-    min-height: 100vh;
-    box-sizing: border-box;
-}
+/* ================================
+   DASHBOARD GENERAL
+================================ */
 
-/* Encabezado */
+.dashboard {
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: background-color 0.2s, color 0.2s;
+}
 
 .dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .dashboard-header h1 {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
     font-size: 28px;
-    font-weight: 700;
-    color: #111827;
 }
 
 .dashboard-header p {
     margin: 0;
-    color: #6b7280;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-/* Tarjetas de métricas */
+/* ================================
+   BOTÓN DE TEMA
+================================ */
+
+.theme-button {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* ================================
+   ESTADÍSTICAS
+================================ */
 
 .dashboard-stats {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    margin-bottom: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
 }
 
 .stat-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 3%);
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 22px;
 }
 
 .stat-card h3 {
-    margin: 0 0 16px;
-    color: #6b7280;
+    margin: 0 0 15px;
     font-size: 14px;
     font-weight: 500;
 }
 
 .stat-card p {
     margin: 0;
-    color: #111827;
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 700;
 }
 
-/* Secciones generales */
+/* ================================
+   SECCIONES
+================================ */
 
 .dashboard-section {
-    min-width: 0;
-    padding: 24px;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 3%);
-    margin-bottom: 24px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 22px;
+    min-height: 180px;
+    margin-bottom: 20px;
 }
 
 .dashboard-section h2 {
     margin: 0;
-    color: #111827;
     font-size: 18px;
-    font-weight: 600;
+    color: #111827;
 }
-
-/* Parte inferior del Dashboard */
 
 .dashboard-bottom {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.dashboard-bottom .dashboard-section {
-    height: 100%;
-    box-sizing: border-box;
+/* ================================
+   MODO CLARO
+================================ */
+
+.dashboard.light-mode {
+    background: #f8fafc;
+    color: #202938;
 }
 
-/* Adaptación a pantallas medianas */
+.light-mode .dashboard-header p {
+    color: #7b8494;
+}
 
-@media (max-width: 1100px) {
+.light-mode .stat-card,
+.light-mode .dashboard-section {
+    background: #ffffff;
+    border-color: #e5e9f0;
+}
+
+.light-mode .stat-card h3 {
+    color: #7b8494;
+}
+
+.light-mode .stat-card p {
+    color: #202938;
+}
+
+.light-mode .theme-button {
+    background: #ffffff;
+    color: #202938;
+    border-color: #dce1e9;
+}
+
+.light-mode .theme-button:hover {
+    background: #f1f5f9;
+}
+
+/* ================================
+   MODO OSCURO
+================================ */
+
+.dashboard.dark-mode {
+    background: #111827;
+    color: #f1f5f9;
+}
+
+.dark-mode .dashboard-header p {
+    color: #9ca3af;
+}
+
+.dark-mode .stat-card,
+.dark-mode .dashboard-section {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+.dark-mode .stat-card h3 {
+    color: #9ca3af;
+}
+
+.dark-mode .stat-card p {
+    color: #f1f5f9;
+}
+
+.dark-mode .theme-button {
+    background: #1f2937;
+    color: #f1f5f9;
+    border-color: #374151;
+}
+
+.dark-mode .theme-button:hover {
+    background: #374151;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
     .dashboard-stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .dashboard-bottom {
         grid-template-columns: 1fr;
     }
 }
-
-/* Adaptación a celulares */
 
 @media (max-width: 600px) {
     .dashboard {
@@ -114,22 +189,10 @@
 
     .dashboard-header {
         align-items: flex-start;
-    }
-
-    .dashboard-header h1 {
-        font-size: 24px;
+        flex-direction: column;
     }
 
     .dashboard-stats {
         grid-template-columns: 1fr;
-        gap: 14px;
-    }
-
-    .stat-card {
-        padding: 20px;
-    }
-
-    .dashboard-section {
-        padding: 18px;
     }
 }
