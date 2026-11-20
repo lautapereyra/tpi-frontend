@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar({ darkMode, toggleTheme }) {
+function Navbar({ darkMode, toggleTheme, onLogout }) {
     const navLinkClass = ({ isActive }) =>
         isActive ? "navbar-link active" : "navbar-link";
 
@@ -38,6 +38,7 @@ function Navbar({ darkMode, toggleTheme }) {
             >
                 {darkMode ? "Modo claro" : "Modo oscuro"}
             </button>
+            <button className="theme-button" type="button" onClick={onLogout}>Cerrar sesión</button>
         </nav>
     );
 }
